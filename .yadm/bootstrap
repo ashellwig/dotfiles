@@ -16,7 +16,7 @@ fi
 # --- Install & configure zpresto ---
 if command -v zsh != /usr/bin/zsh; then
     echo "Installing and Configuring Zsh..."
-    sudo pacman -S zsh --noconfirm && chsh -s /usr/bin/zsh ahellwig
+    sudo pacman -S zsh --noconfirm
     echo $SHELL
     echo "Installation complete. Beginning configuration..."
     export ZDOTDIR=~/.zsh
@@ -25,5 +25,5 @@ if command -v zsh != /usr/bin/zsh; then
         echo "Files Linked."
     fi
     echo "Zsh Config Complete. Running zsh"
-    zsh
+    chsh -s /usr/bin/zsh ahellwig && source ~/.zprestorc | zsh
 fi
