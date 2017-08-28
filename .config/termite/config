@@ -1,0 +1,92 @@
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = DroidSansMonoForPowerline\ Nerd\ Font 15
+scrollback_lines = 10000
+search_wrap = true
+#icon_name = terminal
+#geometry = 640x480
+
+# "system", "on" or "off"
+cursor_blink = on
+
+# "block", "underline" or "ibeam"
+cursor_shape = ibeam 
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+# browser = chromium
+
+# set size hints for the window
+#size_hints = false
+
+# Hide links that are no longer valid in url select overlay mode
+filter_unmatched_urls = true
+
+# emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+[colors]
+# Base16 Twilight
+# Author: David Hart (https://github.com/hartbit)
+
+foreground      = #a7a7a7
+foreground_bold = #c3c3c3
+cursor          = #c3c3c3
+background      = #1e1e1e
+
+# 16 color space
+
+# Black, Gray, Silver, White
+color0  = #1e1e1e
+color8  = #5f5a60
+color7  = #a7a7a7
+color15 = #ffffff
+
+# Red
+color1  = #cf6a4c
+color9  = #cf6a4c
+
+# Green
+color2  = #8f9d6a
+color10 = #8f9d6a
+
+# Yellow
+color3  = #f9ee98
+color11 = #f9ee98
+
+# Blue
+color4  = #7587a6
+color12 = #7587a6
+
+# Purple
+color5  = #9b859d
+color13 = #9b859d
+
+# Teal
+color6  = #afc4db
+color14 = #afc4db
+
+# Extra colors
+color16 = #cda869
+color17 = #9b703f
+color18 = #323537
+color19 = #464b50
+color20 = #838184
+color21 = #c3c3c3
