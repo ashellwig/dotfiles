@@ -15,12 +15,12 @@ fi
 
 # --- Install & configure zpresto ---
 if command -v zsh != /usr/bin/zsh; then
+    mkdir ~/.zsh && export ZDOTDIR="~/.zsh"
     echo "Installing and Configuring Zsh..."
     sudo pacman -S zsh --noconfirm
     echo $SHELL
     echo "Installation complete. Beginning configuration..."
-    export ZDOTDIR=~/.zsh
-    if [[ -d "${ZDOTDIR}"/.zpresto ]]; then
+    if [[ -e ! -d "${ZDOTDIR}"/.zpresto ]]; then
         ~/.yadm/prestolink.zsh | sh
         echo "Files Linked."
     fi
