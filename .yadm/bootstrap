@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+### @ashellwig's yadm Bootstrap ###
+
+# --- Initialize Submodules ---
+cd "$HOME"
+echo "Updating/Initializing submodules"
+yadm submodule update --recursive --init
+
+# --- Bootstrapping Vim ---
+if command -v vim >/dev/null 2>&1; then
+    echo "Bootstrapping Vim"
+    vim '+PluginInstall' '+PluginUpdate' '+qall'
+fi
+
+# --- Install & configure zpresto ---
+if command -v zsh != /usr/bin/zsh; then
+    echo "Installing and Configuring Zsh..."
+    sudo pacman -S zsh --noconfirm && chsh -s /usr/bin/zsh ahellwig
+    echo $SHELL
+    echo "Installation complete. Beginning configuration..."
+    export ZDOTDIR=~/.zsh
+    if [[ -d "${ZDOTDIR}"/.zpresto ]]; then
+        ~/.yadm/prestolink.zsh | sh
+        echo "Files Linked."
+    fi
+    echo "Zsh Config Complete. Running zsh"
+    zsh
+fi
