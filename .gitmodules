@@ -1,0 +1,9 @@
+[submodule "/home/ahellwig/.zprezto"]
+	path = /home/ahellwig/.zprezto
+	url = https://github.com/ashellwig/prezto.git
+[submodule "prezto"]
+	path = prezto
+	url = git@github.com:ashellwig/prezto.git
+[submodule ".zprezto"]
+	path = .zprezto
+	url = git@github.com:ashellwig/.zprezto.git
