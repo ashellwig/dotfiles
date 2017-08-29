@@ -11,6 +11,12 @@
 set nocompatible
 filetype off
 
+""" --- Install Vundle if not Found ---
+if !isdirectory(expand("~/.vim/bundle/Vundle.vim/.git"))
+  !git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  !vim +PluginInstall +qall
+endif
+
 """ --- My Plugins ---
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -23,7 +29,7 @@ call vundle#begin()
 "Plugin 'kovisoft/slimv'
 "Plugin 'guns/vim-clojure-static'
 "Plugin 'Shougo/neocomplete'
-"Plugin 'WolfgangMehner/bash-support'
+Plugin 'WolfgangMehner/bash-support'
 """ Prerequisites """
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Shougo/vimproc.vim'
@@ -78,9 +84,9 @@ let g:ycm_semantic_triggers = {'haskell' : ['.']}
 let g:haskellmode_completion_ghc = 1
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 """ Bash-Support.vim """
-"let g:BASH_AuthorName = 'Ashton Scott Hellwig'
-"let g:BASH_Email = 'hellwigashton@gmail.com'
-"let g:BASH_Company = 'IBM *Contractor*'
+let g:BASH_AuthorName = 'Ashton Scott Hellwig'
+let g:BASH_Email = 'hellwigashton@gmail.com'
+let g:BASH_Company = 'IBM *Contractor*'
 """ Airline """
 let g:airline_powerline_fonts = 1
 set laststatus=2
