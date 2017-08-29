@@ -1,29 +1,26 @@
 #!/usr/bin/env bash
 
-### @ashellwig's yadm Bootstrap ###
-
 # --- Initialize Submodules ---
 cd "$HOME"
 echo "Updating/Initializing submodules"
 yadm submodule update --recursive --init
 
+# --- Install & configure zpresto ---
+GITREPO="~/.yadm"
+if command -v zsh = /usr/bin/zsh; then
+    mkdir ~/.zsh && export ZDOTDIR="~/.zsh"
+    echo "Zsh is installed. Beginning config."
+    git clone --recursive https://github.com/ashellwig/.zprezto.git "${ZDOTDIR}/.zprezto"
+    if [[ -d "${ZDOTDIR}"/.zpresto ]]; then
+	    "${GITREPO}"/prestolink.zsh | zsh
+        echo "Files Linked."
+    fi
+    echo "Zsh Config Complete. Running zsh"
+    chsh -s /usr/bin/zsh ahellwig 
+fi
+
 # --- Bootstrapping Vim ---
 if command -v vim >/dev/null 2>&1; then
     echo "Bootstrapping Vim"
     vim '+PluginInstall' '+PluginUpdate' '+qall'
-fi
-
-# --- Install & configure zpresto ---
-if command -v zsh != /usr/bin/zsh; then
-    mkdir ~/.zsh && export ZDOTDIR="~/.zsh"
-    echo "Installing and Configuring Zsh..."
-    sudo pacman -S zsh --noconfirm
-    echo $SHELL
-    echo "Installation complete. Beginning configuration..."
-    if [[ -e ! -d "${ZDOTDIR}"/.zpresto ]]; then
-        ~/.yadm/prestolink.zsh | sh
-        echo "Files Linked."
-    fi
-    echo "Zsh Config Complete. Running zsh"
-    chsh -s /usr/bin/zsh ahellwig && source ~/.zprestorc | zsh
 fi
