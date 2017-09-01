@@ -12,7 +12,7 @@ if command -v zsh = /usr/bin/zsh; then
     echo "Zsh is installed. Beginning config."
     git clone --recursive https://github.com/ashellwig/.zprezto.git "${ZDOTDIR}/.zprezto"
     if [[ -d "${ZDOTDIR}/.zpresto" ]]; then
-	    "${GITREPO}/prestolink.zsh" | zsh
+        "${GITREPO}/prestolink.zsh" | zsh
         echo "Files Linked."
     fi
     echo "Zsh Config Complete. Running zsh"
