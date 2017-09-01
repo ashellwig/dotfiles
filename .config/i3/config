@@ -143,6 +143,8 @@ bar {
 exec --no-startup-id dbus-update-activation-environment --systemd --all &
 # Wallpaper
 exec --no-startup-id nitrogen --restore &
+# Screensaver
+exec --no-startup-id xscreensaver &
 # Composite Manager
 exec --no-startup-id compton -b &
 # Audio
