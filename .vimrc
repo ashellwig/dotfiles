@@ -1,6 +1,6 @@
 """ Ashton Hellwig's Vimrc """
 """ Github: ashellwig      """
-""" Revised: 08/22/2017    """
+""" Revised: 09/02/2017    """
 """   Configured to use    """
 """   Base16-Shell (Zsh)   """
 """   + My Essential       """
@@ -14,7 +14,7 @@ filetype off
 """ --- Install Vundle if not Found ---
 if !isdirectory(expand("~/.vim/bundle/Vundle.vim/.git"))
   !git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  !vim +PluginInstall +qall
+  !vim +PluginInstall +PluginUpdate +PluginClean +qall
 endif
 
 """ --- My Plugins ---
@@ -29,7 +29,6 @@ call vundle#begin()
 "Plugin 'kovisoft/slimv'
 "Plugin 'guns/vim-clojure-static'
 "Plugin 'Shougo/neocomplete'
-Plugin 'WolfgangMehner/bash-support'
 """ Prerequisites """
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Shougo/vimproc.vim'
@@ -43,12 +42,15 @@ Plugin 'tpope/vim-fireplace.git'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'jason0x43/vim-js-indent'
+Plugin 'WolfgangMehner/bash-support'
+Plugin 'z0mbix/vim-shfmt', { 'for': 'sh' }
 Plugin 'vim-scripts/awk-support.vim'
 """ General Essentials """
 Plugin 'vim-syntastic/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'scrooloose/nerdcommenter'
 """ Look & Feel """
 Plugin 'scrooloose/NERDTree'
 Plugin 'vim-airline/vim-airline'
@@ -56,9 +58,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'chriskempson/base16-vim'
 call vundle#end()
-filetype plugin indent on
 
 """ --- Preferences ---
+filetype plugin indent on
 """ Variables """
 set autowrite
 set encoding=utf-8
@@ -87,6 +89,13 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let g:BASH_AuthorName = 'Ashton Scott Hellwig'
 let g:BASH_Email = 'hellwigashton@gmail.com'
 let g:BASH_Company = 'IBM *Contractor*'
+""" Vim-Shfmt  """
+let g:shfmt_switches = ['-i 2']
+""" NERD Commenter """
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
 """ Airline """
 let g:airline_powerline_fonts = 1
 set laststatus=2
@@ -101,16 +110,16 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nmap <F8> :TagbarToggle<CR>
-let mapleader='\'
+let mapleader='`'
 """ 80 Characters/ln Limit """
 set colorcolumn=81
 highlight ColorColumn ctermbg=Black ctermfg=DarkRed
 """" Highlight Trailing Whitespace """
-"highlight ExtraWhitespace ctermbg=red guibg=red
-"match ExtraWhitespace /\s\+$/
-"autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-"autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-"autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 """ Debugging (When Needed) """
 "set verbose=9
 "set verbosefile=~/vimverbose.txt
