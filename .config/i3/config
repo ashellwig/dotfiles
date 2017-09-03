@@ -86,6 +86,8 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+c reload
 # Restart i3 Inplace (Updates)
 bindsym $mod+Shift+r restart
+# Start Screensaver
+bindsym $mod+0xffc7 exec "xscreensaver &"
 # Lock System
 bindsym $mod+Shift+p exec ~/.config/i3/i3lock-fancy-multimonitor/lock
 # Logout
