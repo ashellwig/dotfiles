@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/zsh
 
 # --- Initialize Submodules ---
 cd ${HOME}
@@ -6,19 +6,59 @@ echo "Updating/Initializing submodules"
 yadm submodule update --recursive --init
 
 # --- Install & configure zpresto ---
-source ${HOME}/.yadm/neededfunctions.sh
-install_zsh_inf
-install_prezto_yadm
+if "$(command -v zsh)" ! "/usr/bin/zsh"; then
+  echo "Please input your distribution"
+  echo "Only Arch Linux and RHEL 7.3 with yum are supported"
+  read DISTR
+  case $DISTR in
+  ARCH)
+    echo "Installing Zsh with Pacman"
+    sudo pacman -Syu --noconfirm
+    sudo pacman -S zsh --noconfirm
+    ;;
+  RHEL)
+    echo "Installing Zsh with yum"
+    sudo yum update
+    sudo yum -y upgrade all
+    sudo yum -y install zsh
+    ;;
+  *)
+    echo "Unknown distrobution. Attempting with ARCH"
+    sudo pacman -Syu --noconfirm
+    sudo pacman -S zsh --noconfirm
+    ;;
+  esac
+  chsh -s $(which zsh)
+  export ZDOTDIR="~/.zsh"
+  echo "Zsh has been installed for ${DISTR}"
+elif command -v zsh = /usr/bin/zsh; then
+  echo "Setting up ZPrezto"
+  if [[ ! -e ${ZDOTDIR}/.zprezto ]]; then
+    if [[ "$(echo $ZDOTDIR)" != "${HOME}/.zsh" ]]; then
+      export ZDOTDIR=${HOME}/.zsh
+    fi
+    git clone --recursive https://github.com/ashellwig/.zprezto.git "${ZDOTDIR}/.zprezto"
+    echo "ZPrezto installed"
+  elif [[ -d ${ZDOTDIR}/.zprezto ]]; then
+    setopt EXTENDED_GLOB
+    for rcfile in "${ZDOTDIR}/.zprezto/runcoms/^README.md(.N)"; do
+      ln -s "$rcfile" "${ZDOTDIR}/.${rcfile:t}"
+    done
+    echo "ZPrezto configured"
+  fi
+fi
 
 # --- Bootstrapping Vim ---
 if command -v vim >/dev/null 2>&1; then
-	echo "Bootstrapping Vim"
-	if [ -d "${HOME}/.vim/bundle/Vundle.vim" ]; then
-		echo "Vundle is already installed, continuing with plugins"
-		vim '+PluginInstall' '+PluginUpdate' '+PluginClean' '+qall'
-	elif [ ! -d "${HOME}/.vim/bundle/Vundle.vim" ]; then
-		echo "Vundle not found. Installing"
-		git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-		vim '+PluginInstall' '+PluginClean' '+qall'
-	fi
+  echo "Bootstrapping Vim"
+  if [ -d "${HOME}/.vim/bundle/Vundle.vim" ]; then
+    echo "Vundle is already installed, continuing with plugins"
+    vim '+PluginInstall' '+PluginUpdate' '+PluginClean' '+qall'
+    exit 0
+  elif [ ! -d "${HOME}/.vim/bundle/Vundle.vim" ]; then
+    echo "Vundle not found. Installing"
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim '+PluginInstall' '+PluginClean' '+qall'
+    exit 0
+  fi
 fi

@@ -4,7 +4,7 @@
 
 # Install Zsh if not Found
 function install_zsh_inf {
-	if "$(command -v zsh)" != "/usr/bin/zsh"; then
+	if "$(command -v zsh)" ! "/usr/bin/zsh"; then
 		echo "Please input your distribution"
 		echo "Only Arch Linux and RHEL 7.3 with yum are supported"
 		read DISTR
@@ -30,18 +30,5 @@ function install_zsh_inf {
 		echo "Zsh is already installed."
 		echo "If the config is incorrect, run \"install_prezto_yadm\"."
 		echo "Exiting."
-		exit 0
 	fi
-}
-
-
-# Install Prezto
-function install_prezto_yadm {
-	if [ "$(echo $ZDOTDIR)" != ${HOME}/.zsh  ]; then
-		export ZDOTDIR=${HOME}/.zsh
-	fi
-	git clone --recursive https://github.com/ashellwig/.zprezto.git "${ZDOTDIR}/.zprezto"
-	for rcfile in "${ZDOTDIR}"/.zprezto/runcoms/^README.md(.N); do
-		ln -s "$rcfile" "${ZDOTDIR}/.${rcfile:t}"
-	done
 }
