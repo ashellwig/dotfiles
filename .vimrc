@@ -90,7 +90,7 @@ let g:BASH_AuthorName = 'Ashton Scott Hellwig'
 let g:BASH_Email = 'hellwigashton@gmail.com'
 let g:BASH_Company = 'IBM *Contractor*'
 """ Vim-Shfmt  """
-let g:shfmt_switches = ['-i 2']
+let g:shfmt_switches = ['-i 0']
 """ NERD Commenter """
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
@@ -110,7 +110,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nmap <F8> :TagbarToggle<CR>
-let mapleader='`'
+let mapleader='\'
 """ 80 Characters/ln Limit """
 set colorcolumn=81
 highlight ColorColumn ctermbg=Black ctermfg=DarkRed
@@ -120,6 +120,10 @@ match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+""" --- Auto Syntax  --- """
+"augroup filetypedetect
+"	au BufRead,BufNewFile *.lib set filetype=sh
+"augroup END
 """ Debugging (When Needed) """
 "set verbose=9
 "set verbosefile=~/vimverbose.txt
