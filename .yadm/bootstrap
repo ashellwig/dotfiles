@@ -1,26 +1,24 @@
 #!/usr/bin/env bash
 
 # --- Initialize Submodules ---
-cd "$HOME"
+cd ${HOME}
 echo "Updating/Initializing submodules"
 yadm submodule update --recursive --init
 
 # --- Install & configure zpresto ---
-GITREPO="~/.yadm"
-if command -v zsh = /usr/bin/zsh; then
-    mkdir ~/.zsh && export ZDOTDIR="~/.zsh"
-    echo "Zsh is installed. Beginning config."
-    git clone --recursive https://github.com/ashellwig/.zprezto.git "${ZDOTDIR}/.zprezto"
-    if [[ -d "${ZDOTDIR}/.zpresto" ]]; then
-        "${GITREPO}/prestolink.zsh" | zsh
-        echo "Files Linked."
-    fi
-    echo "Zsh Config Complete. Running zsh"
-    chsh -s /usr/bin/zsh ahellwig
-fi
+source ${HOME}/.yadm/neededfunctions.sh
+install_zsh_inf
+install_prezto_yadm
 
 # --- Bootstrapping Vim ---
 if command -v vim >/dev/null 2>&1; then
-    echo "Bootstrapping Vim"
-    vim '+PluginInstall' '+PluginUpdate' '+qall'
+	echo "Bootstrapping Vim"
+	if [ -d "${HOME}/.vim/bundle/Vundle.vim" ]; then
+		echo "Vundle is already installed, continuing with plugins"
+		vim '+PluginInstall' '+PluginUpdate' '+PluginClean' '+qall'
+	elif [ ! -d "${HOME}/.vim/bundle/Vundle.vim" ]; then
+		echo "Vundle not found. Installing"
+		git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+		vim '+PluginInstall' '+PluginClean' '+qall'
+	fi
 fi
