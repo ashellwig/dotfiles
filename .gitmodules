@@ -1,6 +1,0 @@
-[submodule "i3lock-fancy-multimonitor"]
-	path = i3lock-fancy-multimonitor
-	url = https://github.com/ashellwig/i3lock-fancy-multimonitor.git
-[submodule ".zprezto"]
-	path = /home/ahellwig/.zsh/.zpresto
-	url = git@github.com:ashellwig/.zprezto.git
