@@ -66,6 +66,8 @@ set autowrite
 set encoding=utf-8
 set number
 set cursorline
+set modeline
+set modelines=5
 """ Colorscheme """
 syntax enable
 let base16colorspace=256
@@ -103,14 +105,14 @@ set showtabline=2
 set noshowmode
 set ttimeoutlen=10
 
-""" --- Misc. Preferences ----
+""" --- Functions ----
 """ Remaps """
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nmap <F8> :TagbarToggle<CR>
-let mapleader='\'
+let mapleader="`"
 """ 80 Characters/ln Limit """
 set colorcolumn=81
 highlight ColorColumn ctermbg=Black ctermfg=DarkRed
@@ -120,10 +122,12 @@ match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-""" --- Auto Syntax  --- """
-"augroup filetypedetect
-"	au BufRead,BufNewFile *.lib set filetype=sh
-"augroup END
+""" Append Modeline (with <Leader>ml) """
+function! AppendModeline()
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :", &tabstop, &shiftwidth, &textwidth, &expandtab, ? '' : 'no')
+  call append(line("$"), l:modeline)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 """ Debugging (When Needed) """
 "set verbose=9
 "set verbosefile=~/vimverbose.txt
