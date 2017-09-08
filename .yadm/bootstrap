@@ -29,8 +29,8 @@ if [[ -z $(which zsh) ]]; then
 		;;
 	esac
 	echo "Sourcing the rest of the bootstrap in *.zsh"
-	source ~/.yadm/bootstrap.zsh
+	~/.yadm/bootstrap.zsh
 else
 	echo "Zsh installed. Sourcing *.zsh"
-	source ~/.yadm/bootstrap.zsh
+	~/.yadm/bootstrap.zsh
 fi

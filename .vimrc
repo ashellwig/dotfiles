@@ -67,7 +67,6 @@ set encoding=utf-8
 set number
 set cursorline
 set modeline
-set modelines=5
 """ Colorscheme """
 syntax enable
 let base16colorspace=256
@@ -124,7 +123,7 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 """ Append Modeline (with <Leader>ml) """
 function! AppendModeline()
-  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :", &tabstop, &shiftwidth, &textwidth, &expandtab, ? '' : 'no')
+  let l:modeline=printf(" vim: set ts=%d sw=%d tw=%d %set :", &tabstop, &shiftwidth, &textwidth, &expandtab, ? '' : 'no')
   call append(line("$"), l:modeline)
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>

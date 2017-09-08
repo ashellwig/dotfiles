@@ -6,18 +6,33 @@
 # Purpose: Automate some things  ##
 ###################################
 
-# --- Local Variables ---
+# --- Variables ---
 # Colors
-local RED="\e[1;31m"
-local GREEN="\e[1;32m"
-local YELLOW="\e[1;33m"
-local CYAN="\e[1;36m"
-local CCLOSE="\e[0m"
+RED="\e[1;31m"
+GREEN="\e[1;32m"
+YELLOW="\e[1;33m"
+CYAN="\e[1;36m"
+CCLOSE="\e[0m"
 # Flashing
-local FLASHTEX="\x1b[5m"
-local FLASHTEXCLOSE="\x1b[25m"
+FLASHTEX="\x1b[5m"
+FLASHTEXCLOSE="\x1b[25m"
+# Locations
+YADMROOTDIR="~/.yadm"
 
 # --- Welcome Message ---
 print -f "\033[32;5mZsh Bootstrap Initiated!\033[0m"
+cd $HOME
+# --- Load the Drop-In Bootstraps ---
+if [[ ! -d $YADMROOTDIR/bootstrap.d ]]; then
+  mkdir -p $YADMROOTDIR/bootstrap.d
+fi
+if [[ -d $YADMROOTDIR/bootstrap.d ]]; then
+  # ${YADMROOTDIR}/bootstrap.d/
+  # ${YADMROOTDIR}/bootstrap.d/
+  # ${YADMROOTDIR}/bootstrap.d/
+  # ${YADMROOTDIR}/bootstrap.d/
+  # ${YADMROOTDIR}/bootstrap.d/
+  print -f "${GREEN}Dropins Complete!"
+fi
 
-# --- Make sure Zsh is the default ---
+# vim: set ft=sh ts=2 sw=2
