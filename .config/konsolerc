@@ -1,11 +1,11 @@
 [Desktop Entry]
-DefaultProfile=Victoria and I.profile
+DefaultProfile=Transparent Solarized.profile
 
 [Favorite Profiles]
 Favorites=Transparent Solarized.profile,Victoria and I.profile
 
 [MainWindow]
 Height 1080=1011
-State=AAAA/wAAAAD9AAAAAAAAAmAAAAPfAAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAAB1QAAAPfAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
-Width 1920=608
+Width 1920=1876
