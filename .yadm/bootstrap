@@ -7,7 +7,7 @@
 #   source the bootstrap.zsh               ##
 #############################################
 
-echo -e "--- Bash Bootstrap ---"
+echo -e "\e[1;32m--- Bash Bootstrap ---\e[0m"
 
 if [[ -z $(which zsh) ]]; then
 	echo "Zsh was not found. Installing now..."
@@ -26,6 +26,9 @@ if [[ -z $(which zsh) ]]; then
 		sudo yum update
 		sudo yum install -y zsh
 		echo "Zsh installed."
+		;;
+	*)
+		echo -e "[1;31mSorry, only \"Arch\" and \"RHEL\" are accepted."
 		;;
 	esac
 	echo "Sourcing the rest of the bootstrap in *.zsh"
