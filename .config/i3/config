@@ -50,7 +50,7 @@ bindsym $mod+v split v
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 # Workspace Management
-bindsym $mod+1 workspace "1: Web'"
+bindsym $mod+1 workspace "1: Web"
 bindsym $mod+2 workspace "2: Music"
 bindsym $mod+3 workspace "3: Programming"
 bindsym $mod+4 workspace "4: TV"
