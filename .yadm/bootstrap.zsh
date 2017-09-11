@@ -20,7 +20,7 @@ if [[ -d "${HOME}/.yadm/bootstrap.d" ]]; then
   # ${YADMROOTDIR}/bootstrap.d/
   # ${YADMROOTDIR}/bootstrap.d/
   # ${YADMROOTDIR}/bootstrap.d/
-  print -f "\n\n\e[1;32mDropins Complete!\e[0m"
+  print -f "\n\n[1;32mDropins Complete![0m"
   cd ${YADMROOTDIR}
 fi
 
