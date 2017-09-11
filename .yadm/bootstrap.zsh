@@ -14,13 +14,14 @@ YADMROOTDIR="~/.yadm"
 print -f "\n \033[32;5mZsh Bootstrap Initiated!\033[0m"
 cd $HOME
 # --- Load the Drop-In Bootstraps ---
-if [[ -d "$YADMROOTDIR/bootstrap.d" ]]; then
-  "${YADMROOTDIR}/bootstrap.d/Zsh.zsh"
+if [[ -d "${HOME}/.yadm/bootstrap.d" ]]; then
+  "${HOME}/.yadm/bootstrap.d/Zsh.zsh"
   # ${YADMROOTDIR}/bootstrap.d/
   # ${YADMROOTDIR}/bootstrap.d/
   # ${YADMROOTDIR}/bootstrap.d/
   # ${YADMROOTDIR}/bootstrap.d/
   print -f "\n\n\e[1;32mDropins Complete!\e[0m"
+  cd ${YADMROOTDIR}
 fi
 
 # vim: set et ts=2 sw=2:

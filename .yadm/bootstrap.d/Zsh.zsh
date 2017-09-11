@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
 if [[ ! -v $RED_COL ]]; then
-  source ./lib_colors.zsh
+  source "${HOME}/.yadm/bootstrap.d/lib_colors.zsh"
 fi
 
 # --- Functions ---
@@ -15,10 +15,12 @@ function configclone_bef() {
   if [[ ! -d $HOME/.zsh ]]; then
     print -f "${RED_COL}Zsh Config Home not found in \".zsh\"$NO_COL"
     if [[ -v $ZDOTDIR ]]; then
-      git clone --recursive git@github.com:ashellwig/.zsh.git $ZDOTDIR
+      git clone --recursive https://github.com/ashellwig/.zsh.git $ZDOTDIR
+      git submodule update --init --recursive
     else
       export ZDOTDIR=$HOME/.zsh
-      git clone --recursive git@github.com:ashellwig/.zsh.git $ZDOTDIR
+      git clone --recursive https://github.com/ashellwig/.zsh.git $ZDOTDIR
+      git submodule update --init --recursive
     fi
   fi
 }
@@ -34,7 +36,7 @@ function install_prereqs() {
     if [[ -a "$ZDOTDIR/functions/powerlevel9k" || -e "$ZDOTDIR/functions/
       zsh-syntax-highlighting" ]]
     print -f "\n \e[1;33mInstalling Prereqs...$NO_COL"
-    git clone https://github.com/bhilburn/powerlevel9k.git ${ZDOTDIR}/functions
+       ${ZDOTDIR}/functions
     git clone https://github.com/zsh-users/zsh-history-substring-search/zsh-history-substring-search.zsh ${ZDOTDIR}/functions.d
     print -f "\n \e[1;32mDone\e[0m"
   fi
