@@ -35,7 +35,7 @@ if [[ -z $(which zsh) ]]; then
 		echo -e "\n[2;32mZsh installed for [4mUbuntu[0m"
 		;;
 	*)
-		echo -e "[1;31mSorry, only \"Arch\" and \"RHEL\" are accepted."
+		echo -e "[1;31mSorry, only \"Arch\", \"Ubuntu\", and \"RHEL\" are accepted.[0m"
 		;;
 	esac
 	echo "Sourcing the rest of the bootstrap in *.zsh"
