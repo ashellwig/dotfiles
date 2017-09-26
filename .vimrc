@@ -4,63 +4,46 @@
 """   Configured to use    """
 """   Base16-Shell (Zsh)   """
 """   + My Essential       """
-"""     Plugins            """
+"""     Plugs            """
 """"""""""""""""""""""""""""""
 
 """ --- Required ---
 set nocompatible
 filetype off
 
-""" --- Install Vundle if not Found ---
-if !isdirectory(expand("~/.vim/bundle/Vundle.vim/.git"))
-  !git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  !vim +PluginInstall +PluginUpdate +PluginClean +qall
-endif
-
-""" --- My Plugins ---
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-""" Disabled (Still Installed) """
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'flazz/vim-colorschemes'
-"Plugin 'vim-latex/vim-latex'
-"Plugin 'vim-ruby/vim-ruby'
-"Plugin 'jdonaldson/vaxe'
-"Plugin 'kovisoft/slimv'
-"Plugin 'guns/vim-clojure-static'
-"Plugin 'Shougo/neocomplete'
+""" --- My Plugs ---
+call plug#begin('~/.vim/plugged')
 """ Prerequisites """
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Shougo/vimproc.vim'
+Plug 'VundleVim/Vundle.vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 """ Language Specific """
-Plugin 'bitc/vim-hdevtools'
-Plugin 'alx741/vim-hindent'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'tpope/vim-fireplace.git'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'jason0x43/vim-js-indent'
-Plugin 'WolfgangMehner/bash-support'
-Plugin 'z0mbix/vim-shfmt', { 'for': 'sh' }
-Plugin 'vim-scripts/awk-support.vim'
+Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
+Plug 'alx741/vim-hindent', { 'for': 'haskell' }
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript'] }
+Plug 'WolfgangMehner/bash-support', { 'for': ['zsh', 'bash', 'sh'] }
+Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
+Plug 'vim-scripts/awk-support.vim', { 'for': 'awk' }
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 """ General Essentials """
-Plugin 'vim-syntastic/syntastic'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'majutsushi/tagbar'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'scrooloose/nerdcommenter'
+Plug 'vim-syntastic/syntastic'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --system-libclang --clang-completer'}
+Plug 'majutsushi/tagbar'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdcommenter'
 """ Look & Feel """
-Plugin 'scrooloose/NERDTree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'chriskempson/base16-vim'
-call vundle#end()
+Plug 'scrooloose/NERDTree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+Plug 'chriskempson/base16-vim'
+call plug#end()
 
 """ --- Preferences ---
-filetype plugin indent on
 """ Variables """
 set autowrite
 set encoding=utf-8
@@ -68,11 +51,10 @@ set number
 set cursorline
 set modeline
 """ Colorscheme """
-syntax enable
 let base16colorspace=256
 colorscheme base16-twilight
 
-""" --- Plugin Settings ---
+""" --- Plug Settings ---
 """ Syntastic """
 map <Leader>s :SyntasticToggleMode<CR>
 let g:syntastic_always_popuilate_loc_list = 0
@@ -103,6 +85,30 @@ set laststatus=2
 set showtabline=2
 set ttimeoutlen=10
 
+""" --- Language-Specific ---
+" TODO: Convert the below to use $VIMRUNTIME/ftplugin/*
+"""" Python """
+" au BufNewFile,BufRead *.py
+			" \ set tabstop=4
+			" \ set softtabstop=4
+			" \ set shiftwidth=4
+			" \ set textwidth=79
+			" \ set expandtab
+			" \ set autoindent
+			" \ set fileformat=unix
+			" \ set filetype=python
+" """" Web """
+" au BufNewFile,BufRead *.js, *.html, *.css
+			" \ set tabstop=2
+			" \ set softtabstop=2
+			" \ set shiftwidth=2
+" """ Shell """
+" au BufNewFile,BufRead *.zsh *.bash
+			" \ set expandtab
+			" \ set tabstop=2
+			" \ set softtabstop=2
+			" \ set shiftwidth=2
+
 """ --- Functions ----
 """ Remaps """
 nnoremap <C-J> <C-W><C-J>
@@ -120,7 +126,6 @@ match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-""" Append Modeline (with <Leader>ml) """
 """ Debugging (When Needed) """
 "set verbose=9
 "set verbosefile=~/vimverbose.txt

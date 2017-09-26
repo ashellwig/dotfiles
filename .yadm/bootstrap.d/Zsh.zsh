@@ -44,6 +44,8 @@ function install_prereqs() {
 
 # --- Calls to Functions ---
 function callthefunction() {
+  local error_message="\033[1;31mFailed at previous command \033[0m"
+
   print -f "\n [1;33m--- Bootstrapping Zsh Config ---[0m"
   changetheshell &&
     configclone_bef &&
@@ -51,8 +53,15 @@ function callthefunction() {
     install_prereqs &&
     print -f "\n [1;32m Config of Zsh complete![0m"
   return 0
+  if [[ "$!" -ne 0 ]]; then
+    printf "${error_message}"
+  fi
 }
 
 callthefunction
+
+for func in "${HOME}/.yadm/bootstrap.d/*.zsh"; do
+  unfunction "${func}"
+done
 
 # vim: set et ft=zsh sw=2 ts=2:
