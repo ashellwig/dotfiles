@@ -14,20 +14,24 @@ filetype off
 """ --- My Plugs ---
 call plug#begin('~/.vim/plugged')
 """ Prerequisites """
-Plug 'VundleVim/Vundle.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 """ Language Specific """
+" Haskell
 Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
 Plug 'alx741/vim-hindent', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+" Rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+" Typescript
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript'] }
+" Shell
 Plug 'WolfgangMehner/bash-support', { 'for': ['zsh', 'bash', 'sh'] }
-Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
+Plug 'z0mbix/vim-shfmt', { 'for': ['sh','zsh','bash'] }
 Plug 'vim-scripts/awk-support.vim', { 'for': 'awk' }
+" Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 """ General Essentials """
 Plug 'vim-syntastic/syntastic'
@@ -36,11 +40,12 @@ Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 """ Look & Feel """
-Plug 'scrooloose/NERDTree'
+Plug 'scrooloose/NERDTree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
-Plug 'chriskempson/base16-vim'
+Plug 'ryanoasis/vim-devicons', { 'on': 'NERDTreeToggle' }
+autocmd! User vim-devicons.vim echom 'Devicons loaded!'
+Plug 'chriskempson/base16-vim', { 'frozen': 'yes' }
 call plug#end()
 
 """ --- Preferences ---
@@ -50,6 +55,7 @@ set encoding=utf-8
 set number
 set cursorline
 set modeline
+set omnifunc=omnifunc#syntaxcomplete
 """ Colorscheme """
 let base16colorspace=256
 colorscheme base16-twilight
@@ -116,6 +122,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nmap <F8> :TagbarToggle<CR>
+nmap <F9> :NERDTreeToggle<CR>
 let mapleader="`"
 """ 80 Characters/ln Limit """
 set colorcolumn=81

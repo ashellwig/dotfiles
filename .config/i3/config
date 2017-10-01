@@ -17,6 +17,7 @@ floating_modifier $mod
 bindsym $mod+Return exec termite
 for_window [instance="yakuake"] floating enable
 bindsym $mod+Shift+Return exec yakuake
+for_window [instance="x3270"] floating enable
 # Kill
 bindsym $mod+Shift+q kill
 # Program Launcher
