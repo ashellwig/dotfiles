@@ -145,7 +145,10 @@ bar {
 # Systemd Environment Variables Update
 exec --no-startup-id dbus-update-activation-environment --systemd --all &
 # Wallpaper
-exec --no-startup-id nitrogen --restore &
+# Left (Primary)
+exec --no-startup-id nitrogen --head=xin_0 --set-centered /home/ahellwig/pictures/wallpapers/soraandshirocartoon.jpg &
+# Right (Secondary)
+exec --no-startup-id nitrogen --head=xin_1 --set-centered /home/ahellwig/pictures/wallpapers/implying.jpg &
 # Screensaver
 exec --no-startup-id xscreensaver &
 # Composite Manager
