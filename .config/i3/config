@@ -143,16 +143,13 @@ bar {
 
 # --- Auto Start ---
 # Systemd Environment Variables Update
-exec --no-startup-id dbus-update-activation-environment --systemd --all &
-# Wallpaper
-# Left (Primary)
-exec --no-startup-id nitrogen --head=xin_0 --set-centered /home/ahellwig/pictures/wallpapers/soraandshirocartoon.jpg &
-# Right (Secondary)
-exec --no-startup-id nitrogen --head=xin_1 --set-centered /home/ahellwig/pictures/wallpapers/implying.jpg &
-# Screensaver
-exec --no-startup-id xscreensaver &
-# Composite Manager
-exec --no-startup-id compton -b &
-# Audio
-exec --no-startup-id start-pulseaudio-x11 &
-exec --no-startup-id [ ! -s ~/.config/mpd/pid ] && mpd
+# exec --no-startup-id dbus-update-activation-environment --systemd --all &
+# # Wallpaper
+# exec --no-startup-id nitrogen --restore &
+# # Screensaver
+# exec --no-startup-id xscreensaver &
+# # Composite Manager
+# exec --no-startup-id compton -b &
+# # Audio
+# exec --no-startup-id start-pulseaudio-x11 &
+# exec --no-startup-id [ ! -s ~/.config/mpd/pid ] && mpd
