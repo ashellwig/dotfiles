@@ -44,8 +44,10 @@ compton '-b' &
 nitrogen '--restore' &
 # Screensaver
 xscreensaver &
-## Window Manager
+# Widgets (Conky)
+$(conky --config=$HOME/.config/conky/conky.conf) &
+# -- Window Manager --
 # i3 (Debugging, Logs Output)
-# exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
+ #exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
 # i3 (Normal)
 exec i3
