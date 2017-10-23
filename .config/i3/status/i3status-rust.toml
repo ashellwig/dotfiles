@@ -1,0 +1,49 @@
+theme = "plain"
+icons = "awesome"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/ ::"
+info_type = "available"
+unit = "GB"
+interval = 20
+
+[[block]]
+block = "disk_space"
+path = "/home"
+alias = "/home ::"
+info_type = "available"
+unit = "GB"
+interval = 20
+
+[[block]]
+block = "pacman"
+interval = 10
+
+[[block]]
+block = "temperature"
+collapsed = true
+interval = 2
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "speedtest"
+interval = 1800
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "time"
+interval = 1
+format = "%a %B %d, %G %r MST (%s UNIX)"
