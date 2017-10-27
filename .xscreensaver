@@ -1,11 +1,11 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.37 for ahellwig on Sun Oct 22 21:16:41 2017.
+# Written by xscreensaver-demo 5.37 for ahellwig on Tue Oct 24 02:40:10 2017.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:03:00
-cycle:		0:10:00
-lock:		False
-lockTimeout:	0:00:00
+cycle:		0:05:00
+lock:		True
+lockTimeout:	1:00:00
 passwdTimeout:	0:00:30
 visualID:	default
 installColormap:    True
@@ -34,7 +34,7 @@ grabVideoFrames:    False
 chooseRandomImages: False
 imageDirectory:	
 
-mode:		one
+mode:		random-same
 selected:	42
 
 textMode:	program
@@ -86,8 +86,8 @@ programs:								      \
 -				rd-bomb -root				    \n\
 - GL: 				rubik -root				    \n\
 -				sierpinski -root			    \n\
-				slip -root -delay 6814 -count 29 -cycles      \
-				  27 -ncolors 179			    \n\
+				slip -root -delay 7080 -count 84 -cycles      \
+				  67 -ncolors 255			    \n\
 - GL: 				sproingies -root			    \n\
 -				starfish -root				    \n\
 -				strange -root				    \n\

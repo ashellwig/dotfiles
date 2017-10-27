@@ -46,8 +46,9 @@ fi
 ## System
 # Update Systemd
 dbus-update-activation-environment '--sytemd' '--all' &
+dbus-update-activation-environment '--sytemd' '--user' &
 # Audio
-# start-pulseaudio-x11 &
+start-pulseaudio-x11 &
 # ([ ! -s "${HOME}/.config/mpd/pid" ] && mpd) &
 ## Appearence
 # Composite Manager
