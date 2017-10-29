@@ -2,6 +2,11 @@ theme = "plain"
 icons = "awesome"
 
 [[block]]
+block = "time"
+interval = 1
+format = "(%s UNIX)"
+
+[[block]]
 block = "disk_space"
 path = "/"
 alias = "/ ::"
@@ -46,4 +51,4 @@ block = "sound"
 [[block]]
 block = "time"
 interval = 1
-format = "%a %B %d, %G %r MST (%s UNIX)"
+format = "%a %B %d, %G %r MST"
