@@ -47,6 +47,8 @@ fi
 # Update Systemd
 dbus-update-activation-environment '--sytemd' '--all' &
 dbus-update-activation-environment '--sytemd' '--user' &
+# Monitor Config
+xrandr --auto &
 # Audio
 start-pulseaudio-x11 &
 # ([ ! -s "${HOME}/.config/mpd/pid" ] && mpd) &
@@ -58,7 +60,7 @@ nitrogen '--restore' &
 # Screensaver
 xscreensaver &
 # Widgets (Conky)
-$(conky --config=$HOME/.config/conky/conky.conf -d) &
+conky --config=$HOME/.config/conky/conky.conf -d &
 
 # -- Window Manager --
 # i3 (Debugging, Logs Output)
