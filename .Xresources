@@ -7,26 +7,9 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 ! urxvt
-URxvt*underlineColor: yellow
 XTerm*font: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=15
 XTerm*boldFont: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=15:style=Bold
-XTerm.termName: xterm-16color
-URxvt*depth: 24
-URxvt*utf8: 2
-URxvt*letterspace: -1
-URxvt*borderless: 1
-URxvt*scrollBar: false
-URxvt*loginShell: true
-Urxvt*secondaryScroll: true
-URxvt*saveLines: 5000
-URxvt*termName: rxvt-unicode-256color
-URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: chromium
-URxvt.matcher.button: 1
-URxvt.skipBuiltinGlyphs: true
-URxvt.lineSpace: 0
-URxvt*transparent: false
-URxvt.intensityStyles: false
+XTerm.termName: xterm-termite
 !URxvt*shading: 50
 
 
@@ -76,8 +59,6 @@ URxvt.intensityStyles: false
 *.color14:      base0C
 *.color15:      base07
 
-! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
-! use 'shell' template to set these if necessary
 *.color16:      base09
 *.color17:      base0F
 *.color18:      base01

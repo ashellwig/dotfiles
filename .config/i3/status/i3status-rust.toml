@@ -1,4 +1,4 @@
-theme = "plain"
+theme = "slick"
 icons = "awesome"
 
 [[block]]
@@ -8,45 +8,38 @@ format = "(%s UNIX)"
 
 [[block]]
 block = "disk_space"
-path = "/"
-alias = "/ ::"
-info_type = "available"
-unit = "GB"
-interval = 20
-
-[[block]]
-block = "disk_space"
 path = "/home"
-alias = "/home ::"
+alias = "/home(avail) ::"
 info_type = "available"
 unit = "GB"
-interval = 20
+interval = 300
 
 [[block]]
 block = "pacman"
-interval = 10
-
-[[block]]
-block = "temperature"
-collapsed = true
-interval = 2
+interval = 600
 
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
+format_mem = "{Mum}MB/{MTm}MB({Mup}%)"
+format_swap = "{SUm}MB/{STm}MB({SUp}%)"
+icons = true
+clickable = true
+warning_mem = 65
+warning_swap = 50
+critical_mem = 90
+critical_swap = 75
+interval = 1
 
 [[block]]
 block = "cpu"
 interval = 1
 
 [[block]]
-block = "speedtest"
-interval = 1800
-
-[[block]]
-block = "sound"
+block = "xrandr"
+interval = 2
+icons = true
+resolution = false
 
 [[block]]
 block = "time"

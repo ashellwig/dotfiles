@@ -129,6 +129,8 @@ client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
 # Status Bar
 bar {
+    font xft:DroidSansMonoForPowerline Nerd Font:style=Book:size=10
+    position bottom
     status_command /bin/i3status-rs /home/ahellwig/.config/i3/status/i3status-rust.toml
     colors {
         background $base00

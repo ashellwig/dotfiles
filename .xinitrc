@@ -48,7 +48,7 @@ fi
 dbus-update-activation-environment '--sytemd' '--all' &
 dbus-update-activation-environment '--sytemd' '--user' &
 # Monitor Config
-xrandr --auto &
+#xrand --auto &
 # Audio
 start-pulseaudio-x11 &
 # ([ ! -s "${HOME}/.config/mpd/pid" ] && mpd) &
