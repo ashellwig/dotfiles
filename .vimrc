@@ -16,15 +16,10 @@ call plug#begin('~/.vim/plugged')
 """ Prerequisites """
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 """ Language Specific """
-" Haskell
-Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
-Plug 'alx741/vim-hindent', { 'for': 'haskell' }
-Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
-Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+" CPP
+Plug 'jalcine/cmake.vim'
 " Rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-" Nim
-Plug 'zah/nim.vim', { 'for': 'nim' }
 " Typescript
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
@@ -37,7 +32,7 @@ Plug 'vim-scripts/awk-support.vim', { 'for': 'awk' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 """ General Essentials """
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --system-libclang --clang-completer'}
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --system-libclang --all'}
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
@@ -77,9 +72,6 @@ let g:syntastic_check_on_wq = 0
 let g:ycm_autoclose_preview_window_after_completion= 1
 let g:ycm_always_populate_location_list = 0
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
-let g:haskellmode_completion_ghc = 1
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 """ Bash-Support.vim """
 let g:BASH_AuthorName = 'Ashton Scott Hellwig'
 let g:BASH_Email = 'hellwigashton@gmail.com'
@@ -96,41 +88,6 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 set showtabline=2
 set ttimeoutlen=10
-
-""" --- Language-Specific ---
-" TODO: Convert the below to use $VIMRUNTIME/ftplugin/*
-"""" Python """
-" au BufNewFile,BufRead *.py
-			" \ set tabstop=4
-			" \ set softtabstop=4
-			" \ set shiftwidth=4
-			" \ set textwidth=79
-			" \ set expandtab
-			" \ set autoindent
-			" \ set fileformat=unix
-			" \ set filetype=python
-" """" Web """
-" au BufNewFile,BufRead *.js, *.html, *.css
-			" \ set tabstop=2
-			" \ set softtabstop=2
-			" \ set shiftwidth=2
-" """ Shell """
-" au BufNewFile,BufRead *.zsh *.bash
-			" \ set expandtab
-			" \ set tabstop=2
-			" \ set softtabstop=2
-			" \ set shiftwidth=2
-""" Nim """
-fun! JumpToDef()
-  if exists("*GotoDefinition_" . &filetype)
-    call GotoDefinition_{&filetype}()
-  else
-    exe "norm! \<C-]>"
-  endif
-endf
-" Jump to tag
-nn <M-g> :call JumpToDef()<cr>
-ino <M-g> <esc>:call JumpToDef()<cr>i
 
 """ --- Functions ----
 """ Remaps """

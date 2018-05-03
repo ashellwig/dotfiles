@@ -45,8 +45,8 @@ fi
 ### Autostart ###
 ## System
 # Update Systemd
-dbus-update-activation-environment '--sytemd' '--all' &
-dbus-update-activation-environment '--sytemd' '--user' &
+#dbus-update-activation-environment '--sytemd' '--all' &
+#dbus-update-activation-environment '--sytemd' '--user' &
 # Monitor Config
 #xrand --auto &
 # Audio
@@ -58,9 +58,9 @@ compton '-b' &
 # Wallpaper
 nitrogen '--restore' &
 # Screensaver
-xscreensaver &
+#xscreensaver &
 # Widgets (Conky)
-conky --config=$HOME/.config/conky/conky.conf -d &
+conky '--config=\"${HOME}/.config/conky/conky.conf\"' '-d' &
 
 # -- Window Manager --
 # i3 (Debugging, Logs Output)
