@@ -30,7 +30,9 @@ Plug 'z0mbix/vim-shfmt', { 'for': ['sh','zsh','bash'] }
 Plug 'vim-scripts/awk-support.vim', { 'for': 'awk' }
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-""" General Essentials """
+"" General Essentials """
+Plug 'tpope/vim-fireplace'
+"Plug '/vim-clojure-static'
 Plug 'vim-syntastic/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --system-libclang --all'}
 Plug 'majutsushi/tagbar'

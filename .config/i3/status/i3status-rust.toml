@@ -14,9 +14,9 @@ info_type = "available"
 unit = "GB"
 interval = 300
 
-[[block]]
-block = "pacman"
-interval = 600
+# [[block]]
+# block = "pacman"
+# interval = 600
 
 [[block]]
 block = "memory"

@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.37 for ahellwig on Sun Dec 10 17:07:54 2017.
+# Written by xscreensaver-demo 5.39 for ahellwig on Sun Jul  1 13:12:55 2018.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:15:00
@@ -283,6 +283,11 @@ programs:								      \
 - GL: 				splodesic -root				    \n\
 - GL: 				unicrud -root				    \n\
 - GL: 				vigilance -root				    \n\
+  GL: 				esper -root				    \n\
+- GL: 				crumbler -root				    \n\
+- GL: 				maze3d -root				    \n\
+- GL: 				peepers -root				    \n\
+- GL: 				razzledazzle -root			    \n\
 
 
 pointerPollTime:    0:00:05
