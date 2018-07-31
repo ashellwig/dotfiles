@@ -58,7 +58,7 @@ compton '-b' &
 # Wallpaper
 nitrogen '--restore' &
 # Screensaver
-#xscreensaver &
+xscreensaver &
 # Widgets (Conky)
 conky '--config=\"${HOME}/.config/conky/conky.conf\"' '-d' &
 

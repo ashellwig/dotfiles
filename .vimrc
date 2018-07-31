@@ -90,6 +90,9 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 set showtabline=2
 set ttimeoutlen=10
+""" NERD Tree """
+let NERDTreeShowHidden = 1
+
 
 """ --- Functions ----
 """ Remaps """
