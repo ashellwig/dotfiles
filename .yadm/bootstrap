@@ -63,13 +63,13 @@ fi
 echo -e "${green}NVM Installed${ec}"
 
 # Install Anaconda
-echo -e "${yellow}Installing Anaconda 3 for Python${ec}"
-if [[ ! -d "${HOME}/anaconda3" ]]; then
-	curl -o- https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh | bash
-else
-	echo -e "${green}Anaconda already installed${ec}"
-fi
-echo -e "${green}Anaconda Installed${ec}"
+#echo -e "${yellow}Installing Anaconda 3 for Python${ec}"
+#if [[ ! -d "${HOME}/anaconda3" ]]; then
+#	curl -o- https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh | bash
+#else
+#	echo -e "${green}Anaconda already installed${ec}"
+#fi
+#echo -e "${green}Anaconda Installed${ec}"
 
 # Install Go
 echo -e "${yellow}Installing Golang${ec}"
