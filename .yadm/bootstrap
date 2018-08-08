@@ -78,6 +78,19 @@ else
 fi
 echo -e "${green}Go Installed${ec}"
 
+# Install Rust
+echo -e "${yellow}Installing Rustup for Rust${ec}"
+if [[ ! -d "${HOME}/.rustup" ]]; then
+	curl https://sh.rustup.rs -sSf | bash -s -- \
+		-y --no-modify-path --verbose \
+		--default-host '' \
+		--default-toolchain ''
+	rustup component add rust-src rust-analysis rls-preview
+else
+	echo -e "${green}Rust already installed${ec}"
+fi
+echo -e "${green}Rust Installed${ec}"
+
 # Install vim-plug
 echo -e "${yellow}Installing vim-plug${ec}"
 if [[ ! -e "${HOME}/.vim/autoload/plug.vim" ]]; then
