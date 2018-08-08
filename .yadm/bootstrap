@@ -26,6 +26,10 @@ if [[ ! -x $(command -v yaourt) ]]; then
 	cd ${HOME}
 	mkdir BUILDS
 	cd BUILDS
+  git clone https://aur.archlinux.org/package-query.git
+  cd package-query
+  makepkg -si --noconfirm
+  cd ..
 	git clone https://aur.archlinux.org/yaourt.git
 	cd yaourt
 	makepkg -si --noconfirm
@@ -71,7 +75,7 @@ echo -e "${green}Anaconda Installed${ec}"
 echo -e "${yellow}Installing Golang${ec}"
 if [[ ! -d "${HOME}/go" ]]; then
 	mkdir ${HOME}/go
-	sudo pacman -S go go-tools
+	sudo pacman -S go go-tools --noconfirm
 	go get -u mvdan.cc/sh/cmd/shfmt
 else
 	echo -e "${green}Go already Installed${ec}"
