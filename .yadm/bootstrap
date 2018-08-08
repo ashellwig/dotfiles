@@ -105,9 +105,9 @@ echo -e "${green}vim-plug Installed${ec}"
 echo -e "${yellow}Installing i3${ec}"
 if [[ ! -x "$(command -v i3)" ]]; then
 	sudo pacman -S \
-		i3 compton dmenu nitrogen pulseaudio pulseaudio-alsa \
-		xorg-xinit xorg-server xorg-xrandr xorg-xrdb --noconfirm --needed \
-		yaourt -S conky-lua-nv nerd-fonts-complete --noconfirm --needed
+		compton dmenu nitrogen pulseaudio pulseaudio-alsa \
+		xorg-xinit xorg-server xorg-xrandr xorg-xrdb --noconfirm --needed\
+		yaourt -S i3-gaps-next-git conky-lua-nv nerd-fonts-complete --noconfirm --needed
 else
 	echo -e "${green}i3 already Installed${ec}"
 fi
