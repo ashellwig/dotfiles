@@ -60,7 +60,7 @@ nitrogen '--restore' &
 # Screensaver
 xscreensaver &
 # Widgets (Conky)
-conky '--config=\"${HOME}/.config/conky/conky.conf\"' '-d' &
+conky '--config=\"${HOME}/.config/conky/conky.conf\"' '-b' &
 
 # -- Window Manager --
 # i3 (Debugging, Logs Output)
