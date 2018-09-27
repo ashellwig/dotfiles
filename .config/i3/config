@@ -99,6 +99,7 @@ bindsym $mod+0xffc9 exec "sudo systemctl reboot"
 # --- Look and Feel ---
 # Fixing Window Types
 for_window [class="conky"] floating enable
+for_window [class="Soffice"] floating enable
 # Gaps
 gaps inner 15
 gaps outer 5

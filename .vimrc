@@ -34,7 +34,8 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tpope/vim-fireplace'
 "Plug '/vim-clojure-static'
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --system-libclang --all'}
+Plug 'Valloric/YouCompleteMe'
+", { 'do': './install.py --system-libclang --all'}
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
