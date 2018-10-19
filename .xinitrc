@@ -44,11 +44,8 @@ fi
 # --- User Configuration ---
 ### Autostart ###
 ## System
-# Update Systemd
-#dbus-update-activation-environment '--sytemd' '--all' &
-#dbus-update-activation-environment '--sytemd' '--user' &
-# Monitor Config
-#xrand --auto &
+# Keybindings
+xbindkeys
 # Audio
 start-pulseaudio-x11 &
 # ([ ! -s "${HOME}/.config/mpd/pid" ] && mpd) &
@@ -58,7 +55,7 @@ compton '-b' &
 # Wallpaper
 nitrogen '--restore' &
 # Screensaver
-xscreensaver &
+#xscreensaver &
 # Widgets (Conky)
 conky '--config=\"${HOME}/.config/conky/conky.conf\"' '-b' &
 
