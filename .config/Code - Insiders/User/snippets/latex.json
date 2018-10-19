@@ -1,0 +1,76 @@
+{
+	// Place your snippets for latex here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"question with screenshot": {
+		"prefix": "question-verb-ss",
+		"body": [
+			"% Question ${1}",
+			"\\section{Question ${1}}",
+			"QUESTION HERE",
+			"\t% Question ${1} Solution",
+			"\t\\subsection{Solution}",
+			"\t\tTODO: SOLUTION",
+			"\t\t\\begin{verbatim}",
+			"",
+			"\t\t\\end{verbatim}",
+			"\t\t\\begin{figure}[h]",
+			"\t\t\t\\caption{Question ${1} Solution}",
+			"\t\t\t\\centering",
+			"\t\t\t%\\includegraphics[width=\\textwidth]{Q1F1}",
+			"\t\t\t\\label{fig:q1}",
+			"\t\t\\end{figure}"
+		],
+		"description": "Question with verbatim and screenshot"
+	},
+	"question with algorithm": {
+		"prefix": "question-algorithm",
+		"body": [
+			"% Question ${1} Solution",
+			"\\subsection{Solution}",
+			"\tTODO: SOLUTION",
+			"\t\\begin{algorithm}",
+			"\t\t\\begin{algorithmic}",
+			"\t\t\t\\caption{Question ${1} Solution}",
+			"\t\t\t\\State",
+			"\t\t\\end{algorithmic}",
+			"\t\\end{algorithm}"
+		],
+		"description": "Question with verbatim and screenshot"
+	},
+	"Multiple Bibliographies": {
+		"prefix": "multibib",
+		"body": [
+			"% Bibliography",
+			"%% Multiple Bibs",
+			"\\addbibresource{$1}",
+			"\\addtocategory{consulted}{$2}",
+			"%% Citation Commands",
+			"\\newcommand{\\Mycite}[3]{%",
+			"(\\cite{1}, ~\\citeyear{#1}, ~\\S {#2}){#3}",
+			"}",
+			"\\newcommand{\\Subcite}[3]{%",
+			"(\\citeauthor{#1}, ~\\S {#2}){#3}",
+			"}",
+			"% Use this in the body:",
+			"\\part*{}",
+      "\t\\newpage",
+      "\t% Works Cited",
+      "\t\\printbibliography[",
+      "\t\theading=bibintoc,",
+      "\t\ttitle={Works Cited},",
+      "\t\tnotcategory=consulted",
+      "\t]",
+      "\t% Works Consulted",
+      "\t\\nocite{$1}",
+      "\t\\printbibliography[",
+      "\t\theading=bibintoc,",
+      "\t\ttitle={Works Consulted},",
+      "\t\tcategory=consulted",
+      "\t]"
+		],
+		"description": ""
+	}
+}
