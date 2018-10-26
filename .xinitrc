@@ -46,6 +46,8 @@ fi
 ## System
 # Keybindings
 xbindkeys
+# Notifications, Disk management
+udiskie '-Ant2' &
 # Audio
 start-pulseaudio-x11 &
 # ([ ! -s "${HOME}/.config/mpd/pid" ] && mpd) &
@@ -54,10 +56,12 @@ start-pulseaudio-x11 &
 compton '-b' &
 # Wallpaper
 nitrogen '--restore' &
+
 # Screensaver
 #xscreensaver &
 # Widgets (Conky)
-conky '--config=\"${HOME}/.config/conky/conky.conf\"' '-b' &
+#conky '--config=\"${HOME}/.config/conky/conky.conf\"' '-b' &
+
 
 # -- Window Manager --
 # i3 (Debugging, Logs Output)

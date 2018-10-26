@@ -55,6 +55,7 @@ set encoding=utf-8
 set number
 set cursorline
 set modeline
+set clipboard=unnamed
 set omnifunc=omnifunc#syntaxcomplete
 """ Colorscheme """
 let base16colorspace=256
