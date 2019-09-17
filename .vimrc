@@ -13,29 +13,30 @@ filetype off
 
 """ --- My Plugs ---
 call plug#begin('~/.vim/plugged')
-""" Prerequisites """
+"" Prerequisites """
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 """ Language Specific """
 " CPP
-Plug 'jalcine/cmake.vim'
+"Plug 'jalcine/cmake.vim'
 " Rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 " Typescript
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
-Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript'] }
+"Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+"Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+"Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript'] }
 " Shell
 Plug 'WolfgangMehner/bash-support', { 'for': ['zsh', 'bash', 'sh'] }
 Plug 'z0mbix/vim-shfmt', { 'for': ['sh','zsh','bash'] }
 Plug 'vim-scripts/awk-support.vim', { 'for': 'awk' }
 " Go
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-"" General Essentials """
-Plug 'tpope/vim-fireplace'
+"Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+" LaTeX
+"Plug 'lervag/vimtex'
+""" General Essentials """
+"Plug 'tpope/vim-fireplace'
 "Plug '/vim-clojure-static'
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe'
-", { 'do': './install.py --system-libclang --all'}
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all --system-libclang --system-boost'}
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'

@@ -44,13 +44,14 @@ fi
 # --- User Configuration ---
 ### Autostart ###
 ## System
-# Keybindings
+## Polkit Agent
+/usr/bin/lxqt-policykit-agent & Keybindings
 xbindkeys
 # Notifications, Disk management
 udiskie '-Ant2' &
 # Audio
 start-pulseaudio-x11 &
-# ([ ! -s "${HOME}/.config/mpd/pid" ] && mpd) &
+[ ! -s ~/.config/mpd/mpd.pid ] && mpd ~/.config/mpd/mpd.conf &
 ## Appearence
 # Composite Manager
 compton '-b' &

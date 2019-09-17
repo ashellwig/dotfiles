@@ -54,7 +54,7 @@ bindsym $mod+a focus parent
 bindsym $mod+1 workspace "1: Web"
 bindsym $mod+2 workspace "2: Music"
 bindsym $mod+3 workspace "3: Programming"
-bindsym $mod+4 workspace "4: TV"
+bindsym $mod+4 workspace "4: School"
 bindsym $mod+5 workspace "5: Work"
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace "7: Data & Finance"
@@ -63,7 +63,7 @@ bindsym $mod+9 workspace "9: Ethereum"
 bindsym $mod+Shift+1 move container to workspace "1: Web"
 bindsym $mod+Shift+2 move container to workspace "2: Music"
 bindsym $mod+Shift+3 move container to workspace "3: Programming"
-bindsym $mod+Shift+4 move container to workspace "4: TV"
+bindsym $mod+Shift+4 move container to workspace "4: School"
 bindsym $mod+Shift+5 move container to workspace "5: Work"
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace "7: Data & Finance"
@@ -130,7 +130,7 @@ client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
 # Status Bar
 bar {
-    font xft:DroidSansMonoForPowerline Nerd Font:style=Book:size=10
+    font xft:DroidSansMono Nerd Font:style=Book:size=10
     position bottom
     status_command /bin/i3status-rs /home/ahellwig/.config/i3/status/i3status-rust.toml
     colors {
