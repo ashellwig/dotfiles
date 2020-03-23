@@ -16,7 +16,7 @@ floating_modifier $mod
 # Terminal
 bindsym $mod+Return exec termite
 for_window [instance="yakuake"] floating enable
-bindsym $mod+Shift+Return exec yakuake
+bindsym $mod+Shift+Return exec --no-startup-id "rofi -theme slate -show drun -font \\"DroidSansMono Nerd Font 11\\" -run-shell-command '{terminal} -e \\ {cmd}; read -n 1 -s\\"'"
 for_window [instance="x3270"] floating enable
 # Kill
 bindsym $mod+Shift+q kill

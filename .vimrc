@@ -116,6 +116,19 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
+""" Use Project-Local .vimrc if Available """
+if !exists("*LoadProjectVimrc")
+  function! LoadProjectVimrc()
+    let vimrcFile = findfile(".vimrc, ".;")
+
+    if !empty(vimrcFile)
+      execute ":so" l:vimrcFile
+      echom l:vimrcFile
+    endif
+  endfunction
+endif
+autocmd DirChanged * :call LoadProjectVimrc()
+
 """ Debugging (When Needed) """
 "set verbose=9
 "set verbosefile=~/vimverbose.txt

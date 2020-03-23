@@ -7,8 +7,8 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 ! urxvt
-XTerm*font: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=15
-XTerm*boldFont: xft:DroidSansMonoForPowerline Nerd Font:pixelsize=15:style=Bold
+XTerm*font: xft:DroidSansMono Nerd Font:pixelsize=15
+XTerm*boldFont: xft:DroidSansMono Nerd Font:pixelsize=15:style=Bold
 XTerm.termName: xterm-termite
 !URxvt*shading: 50
 
@@ -65,6 +65,4 @@ XTerm.termName: xterm-termite
 *.color19:      base02
 *.color20:      base04
 *.color21:      base06
-
-s off
 
