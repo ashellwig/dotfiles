@@ -1,6 +1,6 @@
 """ Ashton Hellwig's Vimrc """
 """ Github: ashellwig      """
-""" Revised: 09/02/2017    """
+""" Revised: 26/03/2020    """
 """   Configured to use    """
 """   Base16-Shell (Zsh)   """
 """   + My Essential       """
@@ -11,32 +11,44 @@
 set nocompatible
 filetype off
 
+
+""" --- Install vim-plug --- """
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.vom/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 """ --- My Plugs ---
 call plug#begin('~/.vim/plugged')
 "" Prerequisites """
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 """ Language Specific """
 " CPP
-"Plug 'jalcine/cmake.vim'
+Plug 'jalcine/cmake.vim'
+Plug 'cjuniet/clang-format.vim', { 'for': ['c++', 'cpp', 'c', 'header'] }
+Plug 'octol/vim-cpp-enhanced-highlight'
 " Rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 " Typescript
 "Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 "Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
-"Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript'] }
+" Javascript
+Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript'] }
 " Shell
 Plug 'WolfgangMehner/bash-support', { 'for': ['zsh', 'bash', 'sh'] }
 Plug 'z0mbix/vim-shfmt', { 'for': ['sh','zsh','bash'] }
 Plug 'vim-scripts/awk-support.vim', { 'for': 'awk' }
+" Clojure
+"Plug 'tpope/vim-fireplace'
+"Plug '/vim-clojure-static'
 " Go
 "Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 " LaTeX
 "Plug 'lervag/vimtex'
 """ General Essentials """
-"Plug 'tpope/vim-fireplace'
-"Plug '/vim-clojure-static'
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all --system-libclang --system-boost'}
+Plug 'Valloric/YouCompleteMe', { 'do': '~/.vim/util/compile_ycm_c_lib.sh' }
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
@@ -132,3 +144,6 @@ autocmd DirChanged * :call LoadProjectVimrc()
 """ Debugging (When Needed) """
 "set verbose=9
 "set verbosefile=~/vimverbose.txt
+
+" vim: set et ts=2 sw=2 ft=vim:
+

@@ -45,18 +45,33 @@ fi
 ### Autostart ###
 ## System
 ## Polkit Agent
-/usr/bin/lxqt-policykit-agent & Keybindings
-xbindkeys
+if [[ -e '/usr/bin/lxqt-policykit-agent' ]]; then
+  /usr/bin/lxqt-policykit-agent &
+fi
+# Keybindings
+if [[ $(command -v xbindkeys) ]]; then
+  xbindkeys
+fi
 # Notifications, Disk management
 udiskie '-Ant2' &
 # Audio
 start-pulseaudio-x11 &
-[ ! -s ~/.config/mpd/mpd.pid ] && mpd ~/.config/mpd/mpd.conf &
+if [[ $(command -v start-pulse-audio-x11) ]]; then
+  start-pulseaudio-x11 &
+fi
+
+if [[ $(command -v mpd) ]]; then
+  [ ! -s ~/.config/mpd/mpd.pid ] && mpd ~/.config/mpd/mpd.conf &
+fi
 ## Appearence
 # Composite Manager
-compton '-b' &
+if [[ $(command -v compton) ]] || [[ $(command -v picom) ]]; then
+  picom -b &
+fi
 # Wallpaper
-nitrogen '--restore' &
+if [[ $(command -v nitrogen) ]]; then
+  nitrogen '--restore' &
+fi
 
 # Screensaver
 #xscreensaver &
@@ -69,3 +84,4 @@ nitrogen '--restore' &
  #exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
 # i3 (Normal)
 exec i3
+

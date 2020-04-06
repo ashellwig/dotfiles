@@ -1,0 +1,39 @@
+##
+# Parity Configuration for Ashton Hellwig
+# AshWig, Ltd. <ashton@ashwigltd.com> <github.com/ashellwig>
+##
+
+[parity]
+# Parity continously syncs the chain
+mode = "passive"
+# Blockchain and settings will be stored in ~/.local/share/io.parity.ethereum.
+base_path = "~/.local/share/io.parity.ethereum"
+# Parity databases will be stored in ~/.local/share/io.parity.ethereum/chains.
+db_path = "~/.local/share/io.parity.ethereum/chains"
+# Your encrypted private keys will be stored in ~/.local/share/io.parity.ethereum/keys.
+keys_path = "~/.local/share/io.parity.ethereum/keys"
+# You will be identified as 'ashwig' amongst other nodes..
+identity = "ashwig"
+
+[account]
+# File at /run/media/ahellwig/AsshWig/Parity/acccounts/parity_passwd should contain passwords to unlock your accounts. One password per line.
+password = ["/run/media/ahellwig/AsshWig/Parity/accounts/parity_passwd.txt"]
+
+[ui]
+# Wallet configuration will be stored at ~/.local/share/io.parity.ethereum/signer.
+path = "~/.local/share/io.parity.ethereum/signer"
+
+[network]
+# Parity will sync by downloading latest state first. Node will be operational in couple minutes.
+warp = false
+# Disable serving light peers.
+no_serve_light = true
+
+[secretstore]
+# Encrypted secrets will be stored in ~/.local/share/io.parity.ethereum/secretstore.
+path = "~/.local/share/io.parity.ethereum/secretstore"
+
+[rpc]
+# JSON-RPC will be listening for connections on IP '127.0.0.1'
+interface = "127.0.0.1"
+
