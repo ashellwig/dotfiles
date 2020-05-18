@@ -39,16 +39,13 @@ Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript'] }
 Plug 'WolfgangMehner/bash-support', { 'for': ['zsh', 'bash', 'sh'] }
 Plug 'z0mbix/vim-shfmt', { 'for': ['sh','zsh','bash'] }
 Plug 'vim-scripts/awk-support.vim', { 'for': 'awk' }
-" Clojure
-"Plug 'tpope/vim-fireplace'
-"Plug '/vim-clojure-static'
 " Go
 "Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 " LaTeX
-"Plug 'lervag/vimtex'
+Plug 'lervag/vimtex'
 """ General Essentials """
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': '~/.vim/util/compile_ycm_c_lib.sh' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ~/.vim/plugged/YouCompleteMe/install.py --all --system-libclang --system-boost' }
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
@@ -90,11 +87,11 @@ let g:ycm_autoclose_preview_window_after_completion= 1
 let g:ycm_always_populate_location_list = 0
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 """ Bash-Support.vim """
-let g:BASH_AuthorName = 'Ashton Scott Hellwig'
-let g:BASH_Email = 'hellwigashton@gmail.com'
-let g:BASH_Company = 'IBM *Contractor*'
+let g:BASH_AuthorName = 'Ashton Hellwig'
+let g:BASH_Email = 'ashton@ashwigltd.com'
+let g:BASH_Company = 'AshWig, Ltd.'
 """ Vim-Shfmt  """
-let g:shfmt_switches = ['-i 0']
+let g:shfmt_switches = ['-i2', '-bn', '-ci', '-sr', '-ln', 'bash']
 """ NERD Commenter """
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
@@ -111,12 +108,25 @@ let NERDTreeShowHidden = 1
 
 """ --- Functions ----
 """ Remaps """
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" Left
+" nnoremap <C-J> <C-W><C-J>
+" Right
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
+" Arrow Left
+nnoremap <ESC>[1;5D <C-W><C-H>
+" Arrow Right
+nnoremap <ESC>[1;5C <C-W><C-L>
+" Arrow Up
+nnoremap <ESC>[1;5A <C-W><C-K>
+" Arrow Down
+nnoremap <ESC>[1;5B <C-W><C-J>
+" Toggle TagBar
 nmap <F8> :TagbarToggle<CR>
+" Toggle NERDTree
 nmap <F9> :NERDTreeToggle<CR>
+
 let mapleader="`"
 """ 80 Characters/ln Limit """
 set colorcolumn=81

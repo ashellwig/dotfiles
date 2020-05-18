@@ -72,9 +72,10 @@ fi
 if [[ $(command -v nitrogen) ]]; then
   nitrogen '--restore' &
 fi
-
 # Screensaver
 #xscreensaver &
+xset s off
+xset -dpms
 # Widgets (Conky)
 #conky '--config=\"${HOME}/.config/conky/conky.conf\"' '-b' &
 
