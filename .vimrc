@@ -13,11 +13,11 @@ filetype off
 
 
 """ --- Install vim-plug --- """
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.vom/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+"if empty(glob('~/.vim/autoload/plug.vim'))
+"  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+"    \ https://raw.githubusercontent.vom/junegunn/vim-plug/master/plug.vim
+"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
 
 """ --- My Plugs ---
 call plug#begin('~/.vim/plugged')
@@ -45,7 +45,7 @@ Plug 'vim-scripts/awk-support.vim', { 'for': 'awk' }
 Plug 'lervag/vimtex'
 """ General Essentials """
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ~/.vim/plugged/YouCompleteMe/install.py --all --system-libclang --system-boost' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ~/.vim/plugged/YouCompleteMe/install.py --clangd-completer --ts-completer --rust-completer --cs-completer --go-completer --system-libclang --system-boost' }
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
@@ -71,8 +71,8 @@ set omnifunc=omnifunc#syntaxcomplete
 let base16colorspace=256
 colorscheme base16-twilight
 if filereadable(expand("~/.vimrc_background"))
-	let base16colorspace=256
-	source ~/.vimrc_background
+  let base16colorspace=256
+  source ~/.vimrc_background
 endif
 
 """ --- Plug Settings ---

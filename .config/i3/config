@@ -8,7 +8,7 @@
 set $mod Mod4
 
 # --- Font ---
-font xft:DroidSansMonoForPowerline Nerd Font:style=Book:size=11
+font xft:DroidSansMono Nerd Font:style=Book:size=24
 
 # --- Keybindings ---
 # Floating Modifier
@@ -130,7 +130,7 @@ client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
 # Status Bar
 bar {
-    font xft:DroidSansMono Nerd Font:style=Book:size=10
+    font xft:DroidSansMono Nerd Font:style=Book:size=36
     position bottom
     status_command /bin/i3status-rs /home/ahellwig/.config/i3/status/i3status-rust.toml
     colors {

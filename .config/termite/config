@@ -7,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = DroidSansMonoForPowerline\ Nerd\ Font 15
+font = DroidSansMono Nerd Font 11
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
@@ -17,7 +17,7 @@ search_wrap = true
 cursor_blink = on
 
 # "block", "underline" or "ibeam"
-cursor_shape = ibeam 
+cursor_shape = ibeam
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
 # browser = chromium
@@ -32,7 +32,7 @@ filter_unmatched_urls = true
 #modify_other_keys = false
 
 [hints]
-#font = Monospace 12
+#font = DroidSansMono\ Nerd\ Font 24
 #foreground = #dcdccc
 #background = #3f3f3f
 #active_foreground = #e68080
