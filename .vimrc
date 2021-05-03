@@ -49,6 +49,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ~/.vim/plugged/YouCompleteMe/ins
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
+Plug 'terryma/vim-multiple-cursors'
 """ Look & Feel """
 Plug 'scrooloose/NERDTree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
@@ -87,8 +88,8 @@ let g:ycm_autoclose_preview_window_after_completion= 1
 let g:ycm_always_populate_location_list = 0
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 """ Bash-Support.vim """
-let g:BASH_AuthorName = 'Ashton Hellwig'
-let g:BASH_Email = 'ashton@ashwigltd.com'
+let g:BASH_AuthorName = 'Ash Hellwig'
+let g:BASH_Email = 'ash@ashwigltd.com'
 let g:BASH_Company = 'AshWig, Ltd.'
 """ Vim-Shfmt  """
 let g:shfmt_switches = ['-i2', '-bn', '-ci', '-sr', '-ln', 'bash']
@@ -108,12 +109,6 @@ let NERDTreeShowHidden = 1
 
 """ --- Functions ----
 """ Remaps """
-" Left
-" nnoremap <C-J> <C-W><C-J>
-" Right
-" nnoremap <C-K> <C-W><C-K>
-" nnoremap <C-L> <C-W><C-L>
-" nnoremap <C-H> <C-W><C-H>
 " Arrow Left
 nnoremap <ESC>[1;5D <C-W><C-H>
 " Arrow Right
@@ -122,6 +117,7 @@ nnoremap <ESC>[1;5C <C-W><C-L>
 nnoremap <ESC>[1;5A <C-W><C-K>
 " Arrow Down
 nnoremap <ESC>[1;5B <C-W><C-J>
+
 " Toggle TagBar
 nmap <F8> :TagbarToggle<CR>
 " Toggle NERDTree

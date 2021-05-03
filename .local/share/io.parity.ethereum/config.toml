@@ -17,7 +17,7 @@ identity = "ashwig"
 
 [account]
 # File at /run/media/ahellwig/AsshWig/Parity/acccounts/parity_passwd should contain passwords to unlock your accounts. One password per line.
-password = ["/run/media/ahellwig/AsshWig/Parity/accounts/parity_passwd.txt"]
+password = ["/home/ahellwig/AsshWig/Parity/accounts/parity_passwd.txt"]
 
 [ui]
 # Wallet configuration will be stored at ~/.local/share/io.parity.ethereum/signer.
@@ -25,9 +25,7 @@ path = "/home/ahellwig/.local/share/io.parity.ethereum/signer"
 
 [network]
 # Parity will sync by downloading latest state first. Node will be operational in couple minutes.
-warp = false
-# Disable serving light peers.
-no_serve_light = true
+warp = true
 
 [secretstore]
 # Encrypted secrets will be stored in ~/.local/share/io.parity.ethereum/secretstore.
@@ -39,14 +37,14 @@ interface = "127.0.0.1"
 # APIs enabled for the RPC connection
 apis = [
     "web3",
-    "eth",
-    "parity",
-    "private",
-    "pubsub",
     "net",
+    "eth",
+    "pubsub",
+    "personal",
+    "signer",
+    "parity",
+    "parity_accounts",
+    "parity_set",
     "traces",
-    "rpc",
-    "shh",
-    "shh_pubsub",
-    "personal"
+    "secretstore"
 ]

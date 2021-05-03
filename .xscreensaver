@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.39 for ahellwig on Sun Jul  1 13:12:55 2018.
+# Written by xscreensaver-demo 5.44 for ahellwig on Wed Feb  3 02:39:10 2021.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:15:00
@@ -34,8 +34,8 @@ grabVideoFrames:    False
 chooseRandomImages: False
 imageDirectory:	
 
-mode:		random-same
-selected:	42
+mode:		one
+selected:	57
 
 textMode:	program
 textLiteral:	XScreenSaver
@@ -102,7 +102,7 @@ programs:								      \
 -				crystal -root				    \n\
 -				cynosure -root				    \n\
 -				discrete -root				    \n\
-				distort -root -delay 12389 -radius 150	    \n\
+				distort -root -number 4			    \n\
 -				epicycle -root				    \n\
 -				flow -root				    \n\
 - GL: 				glplanet -root				    \n\
@@ -288,6 +288,15 @@ programs:								      \
 - GL: 				maze3d -root				    \n\
 - GL: 				peepers -root				    \n\
 - GL: 				razzledazzle -root			    \n\
+				scooter -root				    \n\
+				filmleader -root			    \n\
+				glitchpeg -root				    \n\
+  GL: 				handsy -root				    \n\
+				vfeedback -root				    \n\
+  GL: 				deepstars -root				    \n\
+  GL: 				gravitywell -root			    \n\
+  GL: 				etruscanvenus -root			    \n\
+  GL: 				gibson -root				    \n\
 
 
 pointerPollTime:    0:00:05
