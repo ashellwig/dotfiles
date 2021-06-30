@@ -45,7 +45,7 @@ Plug 'vim-scripts/awk-support.vim', { 'for': 'awk' }
 Plug 'lervag/vimtex'
 """ General Essentials """
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ~/.vim/plugged/YouCompleteMe/install.py --clangd-completer --ts-completer --rust-completer --cs-completer --go-completer --system-libclang --system-boost' }
+Plug 'Valloric/YouCompleteMe', { 'do': '~/.vim/plugged/YouCompleteMe/install.py --all --system-libclang --system-boost' }
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'

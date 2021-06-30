@@ -16,8 +16,8 @@ interval = 1
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{MUp}%"
-format_swap = "{SUm}MB/{STm}MB({SUp}%)"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used}MB/{swap_total}MB({swap_used_percents}%)"
 icons = true
 clickable = true
 warning_mem = 65
