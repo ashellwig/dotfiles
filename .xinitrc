@@ -44,10 +44,15 @@ fi
 #if [[ $(command -v xbindkeys) ]]; then
   xbindkeys
 #fi
+# Input
+export GTK_IM_MODULE
+export QT_IM_MODULE
+export XMODIFIERS=@im='ibus'
+ibus-daemon '-drx' &
 # Notifications
 dunst &
 # Disk management
-udiskie '-Ant2' &
+udiskie '--no-automount --tray' &
 # Audio
 start-pulseaudio-x11 &
 if [[ $(command -v start-pulse-audio-x11) ]]; then
@@ -64,14 +69,30 @@ if [[ $(command -v compton) ]] || [[ $(command -v picom) ]]; then
 fi
 # Wallpaper
 if [[ $(command -v nitrogen) ]]; then
+  # Set wallpaper profile to "hentai" for 2 monitors or "ichigo" for 3 montitors
+  export xinit_wallpaper_setting='ichigo'
+  # export xinit_wallpaper_setting='hentai'
+  rm -rf ~/.config/nitrogen/bg-saved.cfg
+  if [[ $xinit_wallpaper_setting == 'ichigo' ]]; then
+    cp \
+      ~/.config/nitrogen/bg-saved_3-monitor_ichigo.cfg.bak \
+      ~/.config/nitrogen/bg-saved.cfg
+  elif [[ $xinit_wallpaper_setting == 'hentai' ]]; then
+    cp \
+      ~/.config/nitrogen/bg-saved_2-monitor_hentai.cfg.bak \
+      ~/.config/nitrogen/bg-saved.cfg
+  fi
   nitrogen '--restore' &
+fi
+if [[ $(command -v streamdeck) ]]; then
+  streamdeck &
 fi
 # Screensaver
 #xscreensaver &
-xset s off
-xset -dpms
+xset s off &
+xset -dpms &
 # Widgets (Conky)
-#conky '--config=\"${HOME}/.config/conky/conky.conf\"' '-b' &
+conky '--config=\"${HOME}/.config/conky/conky.conf\"' '-b' &
 
 
 # -- Window Manager --

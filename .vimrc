@@ -45,11 +45,12 @@ Plug 'vim-scripts/awk-support.vim', { 'for': 'awk' }
 Plug 'lervag/vimtex'
 """ General Essentials """
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': '~/.vim/plugged/YouCompleteMe/install.py --all --system-libclang --system-boost' }
+"Plug 'Valloric/YouCompleteMe', { 'do': '~/.vim/plugged/YouCompleteMe/install.py --all --system-libclang --system-boost' }
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'jceb/vim-orgmode'
 """ Look & Feel """
 Plug 'scrooloose/NERDTree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
