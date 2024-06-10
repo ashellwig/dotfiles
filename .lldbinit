@@ -1,2 +1,0 @@
-# Skip stepping into Catch code
-settings set target.process.thread.step-avoid-regexp Catch

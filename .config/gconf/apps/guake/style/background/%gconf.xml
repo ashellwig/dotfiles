@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="image" mtime="1502752280" type="string">
-		<stringvalue>/home/ahellwig/Pictures/Wallpaper/19656909_10209706492925667_7995063219826667135_n.jpg</stringvalue>
-	</entry>
-	<entry name="transparency" mtime="1502752266" type="int" value="33"/>
-</gconf>
