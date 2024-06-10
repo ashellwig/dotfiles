@@ -25,11 +25,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 """ Language Specific """
 " CPP
-Plug 'jalcine/cmake.vim'
-Plug 'cjuniet/clang-format.vim', { 'for': ['c++', 'cpp', 'c', 'header'] }
-Plug 'octol/vim-cpp-enhanced-highlight'
+"Plug 'jalcine/cmake.vim'
+"Plug 'cjuniet/clang-format.vim', { 'for': ['c++', 'cpp', 'c', 'header'] }
+"Plug 'octol/vim-cpp-enhanced-highlight'
 " Rust
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+"Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 " Typescript
 "Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 "Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
@@ -37,12 +37,12 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript'] }
 " Shell
 Plug 'WolfgangMehner/bash-support', { 'for': ['zsh', 'bash', 'sh'] }
-Plug 'z0mbix/vim-shfmt', { 'for': ['sh','zsh','bash'] }
+"Plug 'z0mbix/vim-shfmt', { 'for': ['sh','zsh','bash'] }
 Plug 'vim-scripts/awk-support.vim', { 'for': 'awk' }
 " Go
 "Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 " LaTeX
-Plug 'lervag/vimtex'
+"Plug 'lervag/vimtex'
 """ General Essentials """
 Plug 'vim-syntastic/syntastic'
 "Plug 'Valloric/YouCompleteMe', { 'do': '~/.vim/plugged/YouCompleteMe/install.py --all --system-libclang --system-boost' }
